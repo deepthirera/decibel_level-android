@@ -60,6 +60,7 @@ public class RecorderActivity extends Activity {
 
 	protected void updateTv() {
 		AppLog.logString(Double.toString((getAmplitudeEMA())) + " dB");
+		AppLog.logString(String.valueOf(recorder.getMaxAmplitude()));
 	}
 
 	private double getAmplitudeEMA() {
@@ -70,7 +71,7 @@ public class RecorderActivity extends Activity {
 
 	private double getAmplitude() {
 		if(recorder != null)
-		return recorder.getMaxAmplitude();
+		return recorder.getMaxAmplitude()/2700;
 		else
 		return 0;
 	}
